@@ -4,7 +4,7 @@ import {TabView, SceneMap} from 'react-native-tab-view';
 
 import DiscoverScreen from '../screens/DiscoverScreen';
 import NewsScreen from '../screens/NewsScreen';
-import TopNavigator from '../components/TopNavigator';
+import TopNavigator from './TopNavigator';
 
 const Home = () => {
   const layout = useWindowDimensions();
@@ -27,7 +27,7 @@ const Home = () => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={{width: layout.width}}
-      // renderTabBar={() => <TopNavigator index={index} routes={routes} />}
+      renderTabBar={() => <TopNavigator index={index} setIndex={setIndex} />}
     />
   );
 };
